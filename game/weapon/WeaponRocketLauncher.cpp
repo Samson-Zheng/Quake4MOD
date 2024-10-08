@@ -4,10 +4,13 @@
 #include "../Game_local.h"
 #include "../Weapon.h"
 #include "../client/ClientEffect.h"
+#include "../Player.h"
 
 #ifndef __GAME_PROJECTILE_H__
 #include "../Projectile.h"
 #endif
+
+#define BLASTER_SPARM_CHARGEGLOW		6
 
 class rvWeaponRocketLauncher : public rvWeapon {
 public:
@@ -24,6 +27,8 @@ public:
 	void					Restore( idRestoreGame *saveFile );
 	void					PreSave				( void );
 	void					PostSave			( void );
+	virtual void			MuzzleRise(idVec3& origin, idMat3& axis);
+	void					ApplyKnockbackToPlayer();
 
 
 #ifdef _XENON
@@ -49,6 +54,16 @@ protected:
 
 	bool								idleEmpty;
 
+	bool				UpdateFlashlight(void);
+	void				Flashlight(bool on);
+
+private:
+	int					chargeTime;
+	int					chargeDelay;
+	idVec2				chargeGlow;
+	bool				fireForced;
+	int					fireHeldTime;
+
 private:
 
 	stateResult_t		State_Idle				( const stateParms_t& parms );
@@ -60,6 +75,10 @@ private:
 	stateResult_t		State_Rocket_Reload		( const stateParms_t& parms );
 	
 	stateResult_t		Frame_AddToClip			( const stateParms_t& parms );
+
+	stateResult_t		State_Charge			(const stateParms_t& parms);
+	stateResult_t		State_Charged			(const stateParms_t& parms);
+	stateResult_t		State_Flashlight		(const stateParms_t& parms);
 	
 	CLASS_STATES_PROTOTYPE ( rvWeaponRocketLauncher );
 };
@@ -104,7 +123,7 @@ void rvWeaponRocketLauncher::Spawn ( void ) {
 	
 	reloadRate = SEC2MS ( spawnArgs.GetFloat ( "reloadRate", ".8" ) );
 	
-	guideAccelTime = SEC2MS ( spawnArgs.GetFloat ( "lockAccelTime", ".25" ) );
+	guideAccelTime = SEC2MS ( spawnArgs.GetFloat ( "lockAccelTime", "25" ) ); //was .25
 	
 	// Start rocket thread
 	rocketThread.SetName ( viewModel->GetName ( ) );
@@ -221,7 +240,8 @@ void rvWeaponRocketLauncher::OnLaunchProjectile ( idProjectile* proj ) {
 	// Launch the projectile
 	idEntityPtr<idEntity> ptr;
 	ptr = proj;
-	guideEnts.Append ( ptr );	
+	guideEnts.Append ( ptr );
+
 }
 
 /*
@@ -443,13 +463,50 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
-	switch ( parms.stage ) {
-		case STAGE_INIT:
-			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));		
-			Attack ( false, 5, spread * 10, 0, 1.0f ); //was 1 number of attack and normal spread
-			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
-			return SRESULT_STAGE ( STAGE_WAIT );
-	
+	switch (parms.stage) {
+	case STAGE_INIT:
+	{	nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier(PMOD_FIRERATE));
+		Attack(false, 5, spread * 10, 0, 1.0f);
+		ApplyKnockbackToPlayer();
+		PlayEffect("fx_chargedflash", barrelJointView, false);
+		int animNum = viewModel->GetAnimator()->GetAnim("fire_fast_2");
+		if (animNum) {
+			idAnim* anim;
+			anim = (idAnim*)viewModel->GetAnimator()->GetAnim(animNum);
+			anim->SetPlaybackRate((float)anim->Length() / (fireRate * owner->PowerUpModifier(PMOD_FIRERATE)));
+		}
+
+
+		PlayAnim(ANIMCHANNEL_ALL, "fire_fast_2", parms.blendFrames);
+		//if (gameLocal.time - fireHeldTime > chargeTime) {
+		//	nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier(PMOD_FIRERATE));
+		//	Attack(true, 1, spread, 0, 1.0f); //was 1 number of attack and normal spread
+		//	//PlayEffect("fx_chargedflash", barrelJointView, false);
+		//	//PlayAnim(ANIMCHANNEL_LEGS, "chargedfire", parms.blendFrames);
+		//	int animNum = viewModel->GetAnimator()->GetAnim("fire");
+		//	if (animNum) {
+		//		idAnim* anim;
+		//		anim = (idAnim*)viewModel->GetAnimator()->GetAnim(animNum);
+		//		anim->SetPlaybackRate((float)anim->Length() / (fireRate * owner->PowerUpModifier(PMOD_FIRERATE)));
+		//	}
+		//	
+		//}
+		//else {
+		//	nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier(PMOD_FIRERATE));
+		//	Attack(false, 5, spread * 10, 0, 1.0f);
+
+		//	int animNum = viewModel->GetAnimator()->GetAnim("fire");
+		//	if (animNum) {
+		//		idAnim* anim;
+		//		anim = (idAnim*)viewModel->GetAnimator()->GetAnim(animNum);
+		//		anim->SetPlaybackRate((float)anim->Length() / (fireRate * owner->PowerUpModifier(PMOD_FIRERATE)));
+		//	}
+
+		//	PlayAnim(ANIMCHANNEL_ALL, "fire", parms.blendFrames);
+		//}
+		//fireHeldTime = 0;
+		return SRESULT_STAGE(STAGE_WAIT);
+	}
 		case STAGE_WAIT:			
 			if ( wsfl.attack && gameLocal.time >= nextAttackTime && ( gameLocal.isClient || AmmoInClip ( ) ) && !wsfl.lowerWeapon ) {
 				SetState ( "Fire", 0 );
@@ -581,3 +638,130 @@ stateResult_t rvWeaponRocketLauncher::Frame_AddToClip ( const stateParms_t& parm
 	return SRESULT_OK;
 }
 
+
+/*
+===============
+rvWeaponRocketLauncher::MuzzleRise
+===============
+*/
+void rvWeaponRocketLauncher::MuzzleRise(idVec3& origin, idMat3& axis) {
+	if (wsfl.zoom)
+		return;
+
+	rvWeapon::MuzzleRise(origin, axis);
+}
+
+
+/*
+================
+rvWeaponBlaster::UpdateFlashlight
+================
+*/
+bool rvWeaponRocketLauncher::UpdateFlashlight(void) {
+	if (!wsfl.flashlight) {
+		return false;
+	}
+
+	SetState("Flashlight", 0);
+	return true;
+}
+/*
+================
+rvWeaponBlaster::Flashlight
+================
+*/
+void rvWeaponRocketLauncher::Flashlight(bool on) {
+	owner->Flashlight(on);
+
+	if (on) {
+		worldModel->ShowSurface("models/weapons/blaster/flare");
+		viewModel->ShowSurface("models/weapons/blaster/flare");
+	}
+	else {
+		worldModel->HideSurface("models/weapons/blaster/flare");
+		viewModel->HideSurface("models/weapons/blaster/flare");
+	}
+}
+
+/*
+================
+rvWeaponBlaster::State_Charge
+================
+*/
+stateResult_t rvWeaponRocketLauncher::State_Charge(const stateParms_t& parms) {
+	enum {
+		CHARGE_INIT,
+		CHARGE_WAIT,
+	};
+	switch (parms.stage) {
+	case CHARGE_INIT:
+		viewModel->SetShaderParm(BLASTER_SPARM_CHARGEGLOW, chargeGlow[0]);
+		StartSound("snd_charge", SND_CHANNEL_ITEM, 0, false, NULL);
+		PlayCycle(ANIMCHANNEL_ALL, "charging", parms.blendFrames);
+		return SRESULT_STAGE(CHARGE_WAIT);
+
+	case CHARGE_WAIT:
+		if (gameLocal.time - fireHeldTime < chargeTime) {
+			float f;
+			f = (float)(gameLocal.time - fireHeldTime) / (float)chargeTime;
+			f = chargeGlow[0] + f * (chargeGlow[1] - chargeGlow[0]);
+			f = idMath::ClampFloat(chargeGlow[0], chargeGlow[1], f);
+			viewModel->SetShaderParm(BLASTER_SPARM_CHARGEGLOW, f);
+
+			if (!wsfl.attack) {
+				SetState("Fire", 0);
+				return SRESULT_DONE;
+			}
+
+			return SRESULT_WAIT;
+		}
+		SetState("Charged", 4);
+		return SRESULT_DONE;
+	}
+	return SRESULT_ERROR;
+}
+
+/*
+================
+rvWeaponBlaster::State_Charged
+================
+*/
+stateResult_t rvWeaponRocketLauncher::State_Charged(const stateParms_t& parms) {
+	enum {
+		CHARGED_INIT,
+		CHARGED_WAIT,
+	};
+	switch (parms.stage) {
+	case CHARGED_INIT:
+		viewModel->SetShaderParm(BLASTER_SPARM_CHARGEGLOW, 1.0f);
+
+		StopSound(SND_CHANNEL_ITEM, false);
+		StartSound("snd_charge_loop", SND_CHANNEL_ITEM, 0, false, NULL);
+		StartSound("snd_charge_click", SND_CHANNEL_BODY, 0, false, NULL);
+		return SRESULT_STAGE(CHARGED_WAIT);
+
+	case CHARGED_WAIT:
+		if (!wsfl.attack) {
+			fireForced = true;
+			SetState("Fire", 0);
+			return SRESULT_DONE;
+		}
+		return SRESULT_WAIT;
+	}
+	return SRESULT_ERROR;
+}
+
+void rvWeaponRocketLauncher::ApplyKnockbackToPlayer() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+
+		idVec3 knockbackDirection = -player->viewAxis[0];
+		float knockbackForce = 500.0f;
+
+		idPhysics* physics = player->GetPhysics();
+		if (physics) {
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
+}
