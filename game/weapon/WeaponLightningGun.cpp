@@ -47,6 +47,11 @@ public:
 
 	bool			NoFireWhileSwitching( void ) const { return true; }
 
+	void					ForceDash();
+	void					ForceJump();
+	void					ForceShield();
+	void					ForceHealing();
+
 protected:
 
 	void					UpdateTubes	( void );
@@ -970,4 +975,61 @@ void rvLightningPath::Restore( idRestoreGame* savefile ) {
 	savefile->ReadVec3( normal );
 	trailEffect.Restore( savefile );
 	impactEffect.Restore( savefile );
+}
+
+void rvWeaponLightningGun::ForceDash() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+
+		idVec3 knockbackDirection = -player->viewAxis[0];
+		float knockbackForce = 500.0f;
+
+		idPhysics* physics = player->GetPhysics();
+		if (physics) {
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
+}
+void rvWeaponLightningGun::ForceJump() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+
+		idVec3 knockbackDirection = -player->viewAxis[0];
+		float knockbackForce = 500.0f;
+
+		idPhysics* physics = player->GetPhysics();
+		if (physics) {
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
+}
+void rvWeaponLightningGun::ForceShield() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+
+		idVec3 knockbackDirection = -player->viewAxis[0];
+		float knockbackForce = 500.0f;
+
+		idPhysics* physics = player->GetPhysics();
+		if (physics) {
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
+}
+void rvWeaponLightningGun::ForceHealing() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+
+		idVec3 knockbackDirection = -player->viewAxis[0];
+		float knockbackForce = 500.0f;
+
+		idPhysics* physics = player->GetPhysics();
+		if (physics) {
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
 }
