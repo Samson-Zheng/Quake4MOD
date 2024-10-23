@@ -1,0 +1,299 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\MultiplayerGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\MultiplayerGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\powerups.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\weapon\\WeaponLightningGun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponLightningGun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\player.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\weapons\\lightninggun.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ammo.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\powerup.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\starwars.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine_medic.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 185,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MultiplayerGame.cpp",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\MultiplayerGame.cpp",
+              "RelativeDocumentMoniker": "game\\MultiplayerGame.cpp",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\MultiplayerGame.cpp",
+              "RelativeToolTip": "game\\MultiplayerGame.cpp",
+              "ViewState": "AQIAAE8fAAAAAAAAAAAmwGAfAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-22T18:05:43.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeaponLightningGun.cpp",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\weapon\\WeaponLightningGun.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponLightningGun.cpp",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\weapon\\WeaponLightningGun.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponLightningGun.cpp",
+              "ViewState": "AQIAAM4DAAAAAAAAAAAUwM0DAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-22T16:15:31.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "lightninggun.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\weapons\\lightninggun.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\weapons\\lightninggun.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\weapons\\lightninggun.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\weapons\\lightninggun.def",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAAAKAAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-21T20:08:48.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "powerup.map",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\powerup.map",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\powerup.map",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\powerup.map",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\powerup.map",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-21T19:15:40.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "powerups.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\powerups.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\powerups.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\powerups.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\powerups.def",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-21T03:13:18.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.cpp",
+              "RelativeDocumentMoniker": "game\\Entity.cpp",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.cpp",
+              "RelativeToolTip": "game\\Entity.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-20T19:10:43.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.h",
+              "RelativeDocumentMoniker": "game\\Entity.h",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Entity.h",
+              "RelativeToolTip": "game\\Entity.h",
+              "ViewState": "AQIAAKUCAAAAAAAAAAAAAKgCAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-20T19:10:41.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "starwars.map",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\starwars.map",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\starwars.map",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\starwars.map",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\maps\\starwars.map",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAAAFgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-20T16:53:24.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "char_marine.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine.def",
+              "ViewState": "AQIAAJ4JAAAAAAAAAAAAACUJAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-15T17:49:29.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "char_marine_medic.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine_medic.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine_medic.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine_medic.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ai\\char_marine_medic.def",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-15T17:42:41.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "player.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\player.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\player.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\player.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\player.def",
+              "ViewState": "AQIAAFIEAAAAAAAAAIAwwGYEAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-14T03:49:58.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.cpp",
+              "RelativeDocumentMoniker": "game\\Player.cpp",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.cpp",
+              "RelativeToolTip": "game\\Player.cpp",
+              "ViewState": "AQIAAGISAAAAAAAAAAAmwHUSAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-14T03:46:35.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.h",
+              "RelativeDocumentMoniker": "game\\Player.h",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Player.h",
+              "RelativeToolTip": "game\\Player.h",
+              "ViewState": "AQIAAPkAAAAAAAAAAAAAABsEAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-14T03:46:33.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Sound.h",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Sound.h",
+              "RelativeDocumentMoniker": "game\\Sound.h",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Sound.h",
+              "RelativeToolTip": "game\\Sound.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-13T22:34:20.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ammo.def",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ammo.def",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ammo.def",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ammo.def",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Steam\\steamapps\\common\\Quake 4\\SWBF2Mod\\def\\ammo.def",
+              "ViewState": "AQIAAOwAAAAAAAAAAAAAAEIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-10-13T21:38:14.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Weapon.cpp",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.cpp",
+              "RelativeDocumentMoniker": "game\\Weapon.cpp",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.cpp",
+              "RelativeToolTip": "game\\Weapon.cpp",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-13T20:10:39.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Weapon.h",
+              "DocumentMoniker": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.h",
+              "RelativeDocumentMoniker": "game\\Weapon.h",
+              "ToolTip": "C:\\Users\\Alienware\\git\\IT266\\Quake4MOD\\game\\Weapon.h",
+              "RelativeToolTip": "game\\Weapon.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-13T20:10:36.883Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

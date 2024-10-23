@@ -4301,12 +4301,12 @@ float idPlayer::PowerUpModifier( int type ) {
 	if ( PowerUpActive( POWERUP_HASTE ) ) {
 		switch ( type ) {
 			case PMOD_SPEED:	
-				mod *= 1.3f;
+				mod *= 3.0f;
 				break;
 
-			case PMOD_FIRERATE:
-				mod *= 0.7f;
-				break;
+			//case PMOD_FIRERATE:
+				//mod *= 5.5f;
+				//break;
 		}
 	}
 
@@ -4353,10 +4353,10 @@ float idPlayer::PowerUpModifier( int type ) {
 //RITUAL END	
 	if( PowerUpActive( POWERUP_SCOUT ) ) {
 		switch( type ) {
-			case PMOD_FIRERATE: {
-				mod *= (2.0f / 3.0f);
-				break;
-			}
+			//case PMOD_FIRERATE: {
+				//mod *= (2.0f / 3.0f);
+				//break;
+			//}
 			case PMOD_SPEED: {	
 				mod *= 1.5f;
 				break;
@@ -4903,21 +4903,21 @@ void idPlayer::UpdatePowerUps( void ) {
 
 				if ( health < healthBoundary ) {
 					// only actually give health on the server
-					if( gameLocal.isServer ) {
+					//if( gameLocal.isServer ) {
 						health += healthTic;
 						if ( health > (healthBoundary * 1.1f) ) {
 							health = healthBoundary * 1.1f;
 						}
-					}
+					//}
 					StartSound ( "snd_powerup_regen", SND_CHANNEL_POWERUP, 0, false, NULL );
 					nextHealthPulse = gameLocal.time + HEALTH_PULSE;
 				} else if ( health < (healthBoundary * 2) ) {
-					if( gameLocal.isServer ) {
+					//if( gameLocal.isServer ) {
 						health += healthTic / 3;
 						if ( health > (healthBoundary * 2) ) {
 							health = healthBoundary * 2;
 						}
-					}
+					//}
 					StartSound ( "snd_powerup_regen", SND_CHANNEL_POWERUP, 0, false, NULL );
 					nextHealthPulse = gameLocal.time + HEALTH_PULSE;
 				}	
@@ -4931,7 +4931,7 @@ void idPlayer::UpdatePowerUps( void ) {
 	}
 
 	// Regenerate ammo
-	if( gameLocal.isServer && PowerUpActive( POWERUP_AMMOREGEN ) ) {
+	if( PowerUpActive( POWERUP_AMMOREGEN  ) ) { //gameLocal.isServer && 
 		for( int i = 0; i < MAX_WEAPONS; i++ ) {
 			if( inventory.weapons & ( 1 << i ) ) {
 				int ammoIndex	= inventory.AmmoIndexForWeaponIndex( i );
@@ -14078,3 +14078,4 @@ int idPlayer::CanSelectWeapon(const char* weaponName)
 }
 
 // RITUAL END
+

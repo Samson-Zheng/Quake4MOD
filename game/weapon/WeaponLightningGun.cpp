@@ -26,13 +26,14 @@ public:
 	void					Restore			( idRestoreGame* savefile );
 };
 
-class rvWeaponLightningGun : public rvWeapon {
+class rvWeaponLightningGun : public rvWeapon{
 public:
 
 	CLASS_PROTOTYPE( rvWeaponLightningGun );
 
 	rvWeaponLightningGun( void );
 	~rvWeaponLightningGun( void );
+
 
 	virtual void			Spawn		( void );
 	virtual void			Think		( void );
@@ -46,6 +47,13 @@ public:
 	void					Restore		( idRestoreGame* savefile );
 
 	bool			NoFireWhileSwitching( void ) const { return true; }
+
+	void					ForceDash();
+	void					ForceJump();
+	void					ForceShield();
+	void					ForceHealing();
+	float					nextHealthPulse = 0;
+	float					nextArmorPulse = 0;
 
 protected:
 
@@ -260,7 +268,10 @@ void rvWeaponLightningGun::Think ( void ) {
 	rvWeapon::Think();
 
 	UpdateTubes();
-
+	ForceHealing();
+	ForceShield();
+	ForceDash();
+	ForceJump();
 	// If no longer firing or out of ammo then nothing to do in the think
 	if ( !wsfl.attack || !IsReady() || !AmmoAvailable() ) {
 		if ( trailEffectView ) {
@@ -785,7 +796,6 @@ stateResult_t rvWeaponLightningGun::State_Idle( const stateParms_t& parms ) {
 			PlayCycle( ANIMCHANNEL_ALL, "idle", parms.blendFrames );
 			StopSound( SND_CHANNEL_BODY3, false );
 			StartSound( "snd_idle_hum", SND_CHANNEL_BODY3, 0, false, NULL );
-
 			return SRESULT_STAGE( STAGE_WAIT );
 		
 		case STAGE_WAIT:
@@ -970,4 +980,96 @@ void rvLightningPath::Restore( idRestoreGame* savefile ) {
 	savefile->ReadVec3( normal );
 	trailEffect.Restore( savefile );
 	impactEffect.Restore( savefile );
+}
+
+/*
+================
+rvLightningPath::ForcePowers
+================
+*/
+
+void rvWeaponLightningGun::ForceDash() {
+	idPlayer* player = GetOwner();
+
+	if (player) {
+		usercmd_t userCmd = player->usercmd;
+		if (userCmd.buttons) {
+			idVec3 knockbackDirection;
+			float knockbackForce = 50.0f;
+
+			if (userCmd.forwardmove > 0) {
+				knockbackDirection = player->viewAxis[0];
+			}
+			else if (userCmd.forwardmove < 0) {
+				knockbackDirection = -player->viewAxis[0];
+			}
+			else if (userCmd.rightmove > 0) {
+				knockbackDirection = -player->viewAxis[1];
+			}
+			else if (userCmd.rightmove < 0) {
+				knockbackDirection = player->viewAxis[1];
+			}
+			else {
+				return;
+			}
+
+			idPhysics* physics = player->GetPhysics();
+			if (physics) {
+				physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+			}
+		}
+	}
+}
+
+
+void rvWeaponLightningGun::ForceJump() {
+	idPlayer* player = GetOwner();
+	if (player) {
+		player->pfl.noFallingDamage = true;
+		idPhysics_Player* physics = static_cast<idPhysics_Player*>(player->GetPhysics());
+
+		if (physics && physics->HasJumped()) {
+			idVec3 knockbackDirection = idVec3(0, 0, 1);
+			float knockbackForce = 500.0f;
+
+			physics->SetLinearVelocity(physics->GetLinearVelocity() + knockbackDirection * knockbackForce);
+		}
+	}
+}
+
+void rvWeaponLightningGun::ForceShield() {
+	const int ARMOR_PULSE = 5000; // Milliseconds
+	idPlayer* player = GetOwner();
+
+	if (player) {
+		float currentTime = gameLocal.GetTime();
+		int& armor = player->inventory.armor;
+		// Check if enough time has passed for the next healing tick
+		if (currentTime >= nextArmorPulse) {
+			// Regenerate health if it's below the max
+			if (armor < 100) {
+				armor++;
+			}
+			// Update the next health pulse time
+			nextArmorPulse = currentTime + ARMOR_PULSE; // Schedule next health pulse
+		}
+	}
+}
+void rvWeaponLightningGun::ForceHealing() {
+	const int HEALTH_PULSE = 5000; // Milliseconds
+	idPlayer* player = GetOwner();
+
+	if (player) {
+		float currentTime = gameLocal.GetTime();
+
+		// Check if enough time has passed for the next healing tick
+		if (currentTime >= nextHealthPulse) {
+			// Regenerate health if it's below the max
+			if (player->health < 100) {
+				player->health += 1; // Heal 1 HP
+			}
+			// Update the next health pulse time
+			nextHealthPulse = currentTime + HEALTH_PULSE; // Schedule next health pulse
+		}
+	}
 }

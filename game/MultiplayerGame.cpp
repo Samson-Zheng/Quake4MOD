@@ -8030,7 +8030,7 @@ const char* idMultiplayerGame::announcerSoundDefs[ AS_NUM_SOUNDS ] = {
 	"announce_tourney_quarter_finals",		// AS_TOURNEY_QUARTER_FINALS
 	"announce_tourney_semi_finals",			// AS_TOURNEY_SEMI_FINALS
 	"announce_tourney_final_match",			// AS_TOURNEY_FINAL_MATCH
-	"sound/vo/mp/9_99_320_10",				// AS_GENERAL_TEAM_AMMOREGEN
+	"sound/mp/pickups/ammoregen",				// AS_GENERAL_TEAM_AMMOREGEN //Was "sound/vo/mp/9_99_320_10"
 	"sound/vo/mp/9_99_360_6"				// AS_GENERAL_TEAM_DOUBLER
 };
 
