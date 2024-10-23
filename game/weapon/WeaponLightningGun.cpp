@@ -270,6 +270,8 @@ void rvWeaponLightningGun::Think ( void ) {
 	UpdateTubes();
 	ForceHealing();
 	ForceShield();
+	ForceDash();
+	ForceJump();
 	// If no longer firing or out of ammo then nothing to do in the think
 	if ( !wsfl.attack || !IsReady() || !AmmoAvailable() ) {
 		if ( trailEffectView ) {
@@ -797,8 +799,6 @@ stateResult_t rvWeaponLightningGun::State_Idle( const stateParms_t& parms ) {
 			return SRESULT_STAGE( STAGE_WAIT );
 		
 		case STAGE_WAIT:
-			ForceDash();
-			ForceJump();
 			if ( wsfl.lowerWeapon ) {
 				StopSound( SND_CHANNEL_BODY3, false );
 				SetState( "Lower", 4 );
@@ -981,6 +981,12 @@ void rvLightningPath::Restore( idRestoreGame* savefile ) {
 	trailEffect.Restore( savefile );
 	impactEffect.Restore( savefile );
 }
+
+/*
+================
+rvLightningPath::ForcePowers
+================
+*/
 
 void rvWeaponLightningGun::ForceDash() {
 	idPlayer* player = GetOwner();
