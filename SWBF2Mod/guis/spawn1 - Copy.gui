@@ -1,0 +1,141 @@
+windowDef Desktop
+{
+	rect	0, 0, 640, 480
+	selected	0
+	menugui	1
+	visible	1
+	definevec4	"corner"	0.564,0.603,0.286,0.4
+	definevec4	"corner_0"	0.564,0.603,0.286,0
+	definevec4	"white"	1,1,1,1
+	definevec4	"white_8"	1,1,1,0.8
+	definevec4	"white_0"	1,1,1,0
+	definevec4	"orange"	0.890,0.537,0,1
+
+	onESC {
+		set "cmd"	"close" ;
+		
+	}
+	windowDef msgbox
+	{
+		rect	0,0,640,480
+		visible	"gui::visible_msgbox"
+		windowDef title
+		{
+			rect	160,125,237,35
+			visible	1
+			forecolor	1,1,1,0.8
+			text	"Clone Trooper Classes"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+		}
+		windowDef main_b1
+		{
+			rect	30,202,480,26
+			visible	1
+			background	"gfx/guis/mainmenu/b1_dark"
+			matcolor	1,1,1,0.4
+			text	"Clone Trooper"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+			forecolor	1,1,1,1
+			textalign	1
+
+			onMouseEnter{
+				set "cmd" "play main_menu_mouseover" ;
+			}
+			onAction{
+				consoleCMD "give weapon_machinegun" ;
+				set "cmd" "close" ;
+			}
+		}
+		windowDef main_b2
+		{
+			rect	30,232,480,26
+			visible	1
+			background	"gfx/guis/mainmenu/b1_dark"
+			matcolor	1,1,1,0.4
+			text	"Clone Scout"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+			forecolor	1,1,1,1
+			textalign	1
+
+			onMouseEnter{
+				set "cmd" "play main_menu_mouseover" ;
+			}
+			onAction{
+				consoleCMD "give weapon_shotgun" ;
+				consoleCMD "give weapon_napalmgun" ;
+				set "cmd" "close" ;
+			}
+		}
+		windowDef main_b3
+		{
+			rect	30,262,480,26
+			visible	1
+			background	"gfx/guis/mainmenu/b1_dark"
+			matcolor	1,1,1,0.4
+			text	"Clone Heavy"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+			forecolor	1,1,1,1
+			textalign	1
+
+			onMouseEnter{
+				set "cmd" "play main_menu_mouseover" ;
+			}
+			onAction{
+				consoleCMD "give weapon_rocketlauncher" ;
+				consoleCMD "give weapon_dmg" ;
+				set "cmd" "close" ;
+			}
+		}
+		windowDef main_b4
+		{
+			rect	30,292,480,26
+			visible	1
+			background	"gfx/guis/mainmenu/b1_dark"
+			matcolor	1,1,1,0.4
+			text	"Clone Sniper"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+			forecolor	1,1,1,1
+			textalign	1
+
+			onMouseEnter{
+				set "cmd" "play main_menu_mouseover" ;
+			}
+			onAction{
+				consoleCMD "give weapon_railgun" ;
+				set "cmd" "close" ;
+			}
+		}
+		windowDef main_b5
+		{
+			rect	30,322,480,26
+			visible	1
+			background	"gfx/guis/mainmenu/b1_dark"
+			matcolor	1,1,1,0.4
+			text	"Clone Commando"
+			textscale	0.34
+			font	"fonts/marine"
+			textspacing	-1
+			forecolor	1,1,1,1
+			textalign	1
+
+			onMouseEnter{
+				set "cmd" "play main_menu_mouseover" ;
+			}
+			onAction{
+				consoleCMD "give weapon_nailgun" ;
+				consoleCMD "give weapon_grenadelauncher" ;
+				set "cmd" "close" ;
+			}
+		}
+	}
+}
