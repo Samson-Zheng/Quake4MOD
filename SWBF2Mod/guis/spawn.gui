@@ -1,0 +1,174 @@
+windowDef Desktop
+{
+	rect	0, 0, 640, 480
+	selected	0
+	menugui	1
+	visible	1
+	definevec4	"tabSelBackground"	0.5,0.5,0.5,0.5
+	definevec4	"tabSelForeground"	1,1,1,1
+	definevec4	"tabBackground"	0.1,0.1,0.1,0.5
+	definevec4	"tabForeground"	0.752,0.752,0.752,1
+
+	onESC {
+		set "cmd"	"close" ;
+		
+	}
+
+	windowDef SpawnBox
+	{
+		rect	159,60,469,407
+		backcolor	0.298,0.298,0.298,0.8
+		visible	1
+		bordersize	1
+		bordercolor	0.501,0.501,0.501,1
+		windowDef Caption
+		{
+			rect	0,0,467,21
+			visible	1
+			text	"Spawn Stuff"
+			textalign	1
+			textscale	0.25
+			backcolor	0.749,0.749,0.749,0.874
+			forecolor	0,0,0,1
+			bordersize	1
+			bordercolor	0.490,0.490,0.490,1
+			font	"fonts/lowpixel"
+			windowDef Close
+			{
+				rect	447,1,17,17
+				visible	1
+				backcolor	0.494,0.494,0.494,0.494
+				bordersize	1
+				bordercolor	0,0,0,1
+				forecolor	0,0,0,1
+				text	"X"
+				textscale	.27
+				font	"fonts/lowpixel"
+				textalign	0
+
+				onAction {
+					set "cmd"	"close" ;
+				}
+
+			}
+		}
+		windowDef SpawningText1
+		{
+			rect	6,26,221,25
+			visible	"gui::spawningVisible"
+			textscale	0.35
+			text	"Classes"
+			forecolor	1,1,1,1
+			textaligny	-4
+			font	"fonts/lowpixel"
+		}
+		windowDef SpawningText2
+		{
+			rect	6,66,221,25
+			visible	"gui::spawningVisible"
+			textscale	0.35
+			text	""
+			forecolor	1,1,1,1
+			textaligny	-4
+			font	"fonts/lowpixel"
+		}
+		windowDef SpawningText3
+		{
+			rect	6,106,221,25
+			visible	"gui::spawningVisible"
+			textscale	0.35
+			text	"Please Wait..."
+			forecolor	1,1,1,1
+			textaligny	-4
+			font	"fonts/lowpixel"
+		}
+		windowDef Tabs
+		{
+			rect	4,34,457,369
+			visible	"gui::spawnListVisible"
+			windowDef monsterSpawns
+			{
+				rect	2,2,104,20
+				visible	1
+				backcolor	0.5,0.5,0.5,0.5
+				textscale	0.25
+				text	"Trooper"
+				forecolor	1,1,1,1
+				font	"fonts/lowpixel"
+
+				onAction {
+					consoleCMD "give weapon_machinegun" ;
+					set "cmd" "close" ;
+				}
+
+			}
+			windowDef flyingSpawns
+			{
+				rect	88,2,104,20
+				visible	1
+				backcolor	0.5,0.5,0.5,0.5
+				textscale	0.25
+				text	"Scout"
+				forecolor	1,1,1,1
+				font	"fonts/lowpixel"
+
+				onAction {
+					consoleCMD "give weapon_shotgun" ;
+					consoleCMD "give weapon_napalmgun" ;
+					set "cmd" "close" ;
+				}
+
+			}
+			windowDef npcsSpawns
+			{
+				rect	143,2,104,20
+				visible	1
+				backcolor	0.5,0.5,0.5,0.5
+				textscale	0.25
+				text	"Heavy"
+				forecolor	1,1,1,1
+				font	"fonts/lowpixel"
+
+				onAction {
+					consoleCMD "give weapon_rocketlauncher" ;
+					consoleCMD "give weapon_dmg" ;
+					set "cmd" "close" ;
+				}
+
+			}
+			windowDef miniBossesSpawns
+			{
+				rect	198,2,104,20
+				visible	1
+				backcolor	0.5,0.5,0.5,0.5
+				textscale	0.25
+				text	"Sniper"
+				forecolor	1,1,1,1
+				font	"fonts/lowpixel"
+
+				onAction {
+					consoleCMD "give weapon_railgun" ;
+					set "cmd" "close" ;
+				}
+
+			}
+			windowDef bossSpawns
+			{
+				rect	305,2,104,20
+				visible	1
+				backcolor	0.5,0.5,0.5,0.5
+				textscale	0.25
+				text	"Commando"
+				forecolor	1,1,1,1
+				font	"fonts/lowpixel"
+
+				onAction {
+					consoleCMD "give weapon_nailgun" ;
+					consoleCMD "give weapon_grenadelauncher" ;
+					set "cmd" "close" ;
+				}
+
+			}
+		}
+	}
+}

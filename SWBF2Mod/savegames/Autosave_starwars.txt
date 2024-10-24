@@ -1,0 +1,4 @@
+"Autosave starwars"
+"^:Map Start	^0starwars"
+""
+nooverwrite

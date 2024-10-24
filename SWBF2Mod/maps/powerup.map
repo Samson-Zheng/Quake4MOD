@@ -1,0 +1,119 @@
+Version 3
+// entity 0
+{
+"classname" "worldspawn"
+// primitive 0
+{
+ brushDef3
+ {
+  ( 0 0 -1 200 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0000000373 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -208 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0000000298 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.78125 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.78125 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.78125 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.78125 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+// primitive 1
+{
+ brushDef3
+ {
+  ( 0 0 -1 0 ) ( ( 0.00390625 0 1.03125 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -208 ) ( ( 0.00390625 0 1.03125 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 -136 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 -136 ) ( ( 0.00390625 0 1.03125 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 -136 ) ( ( 0.00390625 0 -1.03125 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+// primitive 2
+{
+ brushDef3
+ {
+  ( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -208 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 -136 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 -136 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 -136 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+// primitive 3
+{
+ brushDef3
+ {
+  ( 0 0 -1 -1.5186157227 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 -0.0000000019 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -210.0023498535 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 -154.0673522949 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 127.9610595703 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 -139.8900299072 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 -136 ) ( ( 0.00390625 0 -0.15625 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+// primitive 4
+{
+ brushDef3
+ {
+  ( 0 0 -1 -1.5186157227 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 1.03125 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -210.0023498535 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 -1.03125 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 -154.0673522949 ) ( ( 0.00390625 0 -1.03125 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 -136.0389404297 ) ( ( 0.00390625 0 0.15625 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 -139.8900299072 ) ( ( 0.00390625 0 1.03125 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 128 ) ( ( 0.00390625 0 -0.15625 ) ( 0 0.00390625 0.34375 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+// primitive 5
+{
+ brushDef3
+ {
+  ( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 0 1 -8 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 -1 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 1 0 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( 0 1 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+  ( -1 0 0 -128 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/canyon/can_dirt_02"
+ }
+}
+}
+// entity 1
+{
+"classname" "powerup_ammoregen"
+"name" "powerup_ammoregen_1"
+"origin" "-96 120 48"
+}
+// entity 2
+{
+"classname" "powerup_quad_damage"
+"name" "powerup_quad_damage_1"
+"origin" "104 112 0"
+}
+// entity 3
+{
+"classname" "powerup_haste"
+"name" "powerup_haste_1"
+"origin" "64 120 0"
+}
+// entity 4
+{
+"classname" "powerup_invisibility"
+"name" "powerup_invisibility_1"
+"origin" "16 120 0"
+}
+// entity 5
+{
+"classname" "powerup_regeneration"
+"name" "powerup_regeneration_1"
+"origin" "-40 120 0"
+}
+// entity 6
+{
+"classname" "light"
+"name" "light_1"
+"origin" "0 0 200"
+}
+// entity 7
+{
+"classname" "info_player_start"
+"name" "info_player_start_1"
+"origin" "0 0 8"
+}

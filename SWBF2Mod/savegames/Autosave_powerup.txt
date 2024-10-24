@@ -1,0 +1,4 @@
+"Autosave powerup"
+"^:Map Start	^0powerup"
+""
+nooverwrite

@@ -1,0 +1,7 @@
+---- qbsp / TyrUtils v0.17 ----
+Input file: starwars.map
+Output file: starwars.bsp
+
+---- LoadMapFile ----
+************ ERROR ************
+line 1: Invalid entity format, { not found
